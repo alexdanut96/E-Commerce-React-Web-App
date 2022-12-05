@@ -1,0 +1,68 @@
+.container {
+  /* border: solid; */
+  max-width: 50rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 10px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.article {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  /* border: solid; */
+  box-shadow: 0px 0px 30px 0px rgba(186, 182, 182, 0.75);
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  gap: 0.5rem;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.form {
+  /* border: solid; */
+  box-shadow: 0px 0px 30px 0px rgba(186, 182, 182, 0.75);
+  display: flex;
+  flex-direction: column;
+  max-width: 50rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2rem;
+  align-items: center;
+  border-radius: 10px;
+  margin-top: 2rem;
+}
+
+.form > * {
+  width: 60%;
+}
+
+.input {
+  margin-bottom: 1rem;
+  height: 50px;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0px 0px 30px 0px rgba(186, 182, 182, 0.75);
+}
+
+.select {
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0px 0px 30px 0px rgba(186, 182, 182, 0.75);
+  height: 2rem;
+}
+
+.formBtn {
+  height: 2rem;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0px 0px 30px 0px rgba(186, 182, 182, 0.75);
+}
