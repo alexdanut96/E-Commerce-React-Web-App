@@ -44,8 +44,9 @@ export const MenuSlider = () => {
         style={{
           display: "flex",
           flexDirection: "column",
-          gap: "10px",
+          gap: "20px",
           paddingLeft: "20px",
+          fontSize: "1.2rem",
         }}
       >
         <Link
@@ -61,6 +62,13 @@ export const MenuSlider = () => {
           to="/products"
         >
           Products
+        </Link>
+        <Link
+          onClick={() => dispatch(toggleMenu())}
+          style={{ textDecoration: "none", color: "black", fontWeight: "bold" }}
+          to="/posts"
+        >
+          Posts
         </Link>
       </div>
     </div>
