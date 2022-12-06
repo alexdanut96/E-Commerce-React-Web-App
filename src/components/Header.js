@@ -19,6 +19,7 @@ export const Header = () => {
   const disable = useSelector((state) => state.toggleCart.buttonToggle);
   const menu = useSelector((state) => state.toggleCart.menuToggle);
   const itemsCounter = useSelector((state) => state.shoppingCart.quantity);
+
   const [windowWidth, setWindowWidth] = React.useState(window.innerWidth);
 
   const StyledBadge = styled(Badge)(({ theme }) => ({
