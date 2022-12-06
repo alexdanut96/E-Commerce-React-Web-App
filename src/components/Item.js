@@ -40,7 +40,7 @@ export const Item = ({ item }) => {
         <div className={STYLE.changeQntContainer}>
           <Button
             variant="contained"
-            style={{ background: "#5dbea3" }}
+            style={{ background: "#5dbea3", fontSize: "12px" }}
             onClick={() => dispatch(decrementProductList(item))}
             className={STYLE.changeQnt}
           >
@@ -49,7 +49,7 @@ export const Item = ({ item }) => {
           <div className={STYLE.quantity}>{quantity}</div>
           <Button
             variant="contained"
-            style={{ background: "#5dbea3" }}
+            style={{ background: "#5dbea3", fontSize: "12px" }}
             onClick={() => dispatch(incrementProductList(item))}
             className={STYLE.changeQnt}
           >
@@ -59,7 +59,7 @@ export const Item = ({ item }) => {
       )}
       {quantity > 0 && (
         <Button
-          style={{ background: "red" }}
+          style={{ background: "red", fontSize: "12px", marginTop: "10px" }}
           variant="contained"
           onClick={() => dispatch(removeItem(item))}
           className={STYLE.removeBtn}
