@@ -7,6 +7,7 @@ import {
   decrementProductList,
   removeItem,
 } from "../app/features/shoppingCart/ShoppingCartSlice";
+import Button from "@mui/material/Button";
 
 export const Item = ({ item }) => {
   const dispatch = useDispatch();
@@ -21,37 +22,50 @@ export const Item = ({ item }) => {
       <div className={STYLE.title}>{item.title}</div>
       <div className={STYLE.price}>{formatCurrency(item.price)}</div>
       {quantity <= 0 && (
-        <button
+        // <button
+        //   onClick={() => dispatch(incrementProductList(item))}
+        //   className={STYLE.addBtn}
+        // >
+        //   Add to cart
+        // </button>
+        <Button
+          style={{ marginTop: "1rem", background: "#4681f4", fontSize: "12px" }}
+          variant="contained"
           onClick={() => dispatch(incrementProductList(item))}
-          className={STYLE.addBtn}
         >
           Add to cart
-        </button>
+        </Button>
       )}
       {quantity > 0 && (
         <div className={STYLE.changeQntContainer}>
-          <button
+          <Button
+            variant="contained"
+            style={{ background: "#5dbea3" }}
             onClick={() => dispatch(decrementProductList(item))}
             className={STYLE.changeQnt}
           >
             -
-          </button>
+          </Button>
           <div className={STYLE.quantity}>{quantity}</div>
-          <button
+          <Button
+            variant="contained"
+            style={{ background: "#5dbea3" }}
             onClick={() => dispatch(incrementProductList(item))}
             className={STYLE.changeQnt}
           >
             +
-          </button>
+          </Button>
         </div>
       )}
       {quantity > 0 && (
-        <button
+        <Button
+          style={{ background: "red" }}
+          variant="contained"
           onClick={() => dispatch(removeItem(item))}
           className={STYLE.removeBtn}
         >
           remove
-        </button>
+        </Button>
       )}
     </div>
   );
