@@ -24,27 +24,10 @@
 }
 
 .homeTab:hover,
-.productTab:hover,
-.shoppingCart:hover {
+.productTab:hover {
   color: red;
 }
 
-.itemTag {
-  width: 19px;
-  height: 19px;
-  border-radius: 50%;
-  position: absolute;
-  bottom: -8px;
-  right: -5px;
-  color: white;
-  font-size: 11px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0.5px;
-}
-
-.shoppingCart,
 .menuBtn {
   font-size: 1.5rem;
   cursor: pointer;

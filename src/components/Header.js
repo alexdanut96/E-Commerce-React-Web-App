@@ -1,6 +1,5 @@
 import React from "react";
 import STYLE from "./Header.module.css";
-import { AiOutlineShopping } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { AiOutlineMenu } from "react-icons/ai";
 import { useSelector, useDispatch } from "react-redux";
@@ -8,6 +7,11 @@ import {
   toggleCart,
   toggleMenu,
 } from "../app/features/shoppingCart/cartToggleSlice";
+import Badge from "@mui/material/Badge";
+import { styled } from "@mui/material/styles";
+import IconButton from "@mui/material/IconButton";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import MenuIcon from "@mui/icons-material/Menu";
 
 export const Header = () => {
   const dispatch = useDispatch();
@@ -16,6 +20,16 @@ export const Header = () => {
   const menu = useSelector((state) => state.toggleCart.menuToggle);
   const itemsCounter = useSelector((state) => state.shoppingCart.quantity);
   const [windowWidth, setWindowWidth] = React.useState(window.innerWidth);
+
+  const StyledBadge = styled(Badge)(({ theme }) => ({
+    "& .MuiBadge-badge": {
+      right: -3,
+      top: 13,
+      border: `2px solid ${theme.palette.background.paper}`,
+      padding: "0 4px",
+      background: disable ? "#e79393" : "red",
+    },
+  }));
 
   document.body.style.overflow = toggle || menu ? "hidden" : "auto";
 
@@ -50,27 +64,19 @@ export const Header = () => {
           onClick={() => dispatch(toggleMenu())}
           style={{ color: disable ? "#cccccc" : "black" }}
         >
-          <AiOutlineMenu />
+          <MenuIcon />
         </button>
       )}
 
-      <button
-        disabled={disable}
-        style={{ position: "relative", color: disable ? "#cccccc" : "black" }}
+      <IconButton
         onClick={() => dispatch(toggleCart())}
-        className={STYLE.shoppingCart}
+        disabled={disable}
+        aria-label="cart"
       >
-        <AiOutlineShopping />
-
-        {itemsCounter > 0 && (
-          <div
-            style={{ backgroundColor: disable ? "#e79393" : "red" }}
-            className={STYLE.itemTag}
-          >
-            {itemsCounter}
-          </div>
-        )}
-      </button>
+        <StyledBadge badgeContent={itemsCounter} color="secondary">
+          <ShoppingCartIcon />
+        </StyledBadge>
+      </IconButton>
       {(menu || toggle) && <div className={STYLE.shadyBackground} />}
     </div>
   );
