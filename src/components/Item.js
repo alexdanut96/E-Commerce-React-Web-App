@@ -22,12 +22,6 @@ export const Item = ({ item }) => {
       <div className={STYLE.title}>{item.title}</div>
       <div className={STYLE.price}>{formatCurrency(item.price)}</div>
       {quantity <= 0 && (
-        // <button
-        //   onClick={() => dispatch(incrementProductList(item))}
-        //   className={STYLE.addBtn}
-        // >
-        //   Add to cart
-        // </button>
         <Button
           style={{
             marginTop: "1rem",
