@@ -29,7 +29,12 @@ export const Item = ({ item }) => {
         //   Add to cart
         // </button>
         <Button
-          style={{ marginTop: "1rem", background: "#4681f4", fontSize: "12px" }}
+          style={{
+            marginTop: "1rem",
+            background: "#4681f4",
+            fontSize: "12px",
+            width: "80%",
+          }}
           variant="contained"
           onClick={() => dispatch(incrementProductList(item))}
         >
