@@ -25,7 +25,7 @@ export const Item = ({ item }) => {
         <Button
           style={{
             marginTop: "1rem",
-            background: "#4681f4",
+            background: "#3AA7A3",
             fontSize: "12px",
             width: "80%",
           }}
@@ -39,7 +39,7 @@ export const Item = ({ item }) => {
         <div className={STYLE.changeQntContainer}>
           <Button
             variant="contained"
-            style={{ background: "#5dbea3", fontSize: "12px" }}
+            style={{ background: "#7067CF", fontSize: "12px" }}
             onClick={() => dispatch(decrementProductList(item))}
             className={STYLE.changeQnt}
           >
@@ -48,7 +48,7 @@ export const Item = ({ item }) => {
           <div className={STYLE.quantity}>{quantity}</div>
           <Button
             variant="contained"
-            style={{ background: "#5dbea3", fontSize: "12px" }}
+            style={{ background: "#7067CF", fontSize: "12px" }}
             onClick={() => dispatch(incrementProductList(item))}
             className={STYLE.changeQnt}
           >
@@ -58,7 +58,7 @@ export const Item = ({ item }) => {
       )}
       {quantity > 0 && (
         <Button
-          style={{ background: "red", fontSize: "12px", marginTop: "10px" }}
+          style={{ background: "#A4243B", fontSize: "12px", marginTop: "10px" }}
           variant="contained"
           onClick={() => dispatch(removeItem(item))}
           className={STYLE.removeBtn}

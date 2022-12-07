@@ -1,4 +1,4 @@
-.container {
+/* .container {
   display: flex;
   background-color: antiquewhite;
   padding: 20px;
@@ -8,7 +8,7 @@
   position: sticky;
   top: 0;
   z-index: 2;
-}
+} */
 
 .tabs {
   display: flex;
@@ -17,16 +17,14 @@
 
 .homeTab,
 .productTab {
-  font-size: 1.2rem;
   cursor: pointer;
   text-decoration: none;
-  color: black;
 }
 
-.homeTab:hover,
+/* .homeTab:hover,
 .productTab:hover {
   color: red;
-}
+} */
 
 .menuBtn {
   font-size: 1.5rem;
