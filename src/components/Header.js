@@ -13,7 +13,6 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import MenuIcon from "@mui/icons-material/Menu";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
-import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 
 export const Header = () => {
@@ -46,7 +45,7 @@ export const Header = () => {
     },
   };
 
-  document.body.style.overflow = toggle || menu ? "hidden" : "auto";
+  // document.body.style.overflow = toggle || menu ? "hidden" : "auto";
 
   React.useEffect(() => {
     const windowSize = () => {
@@ -60,110 +59,109 @@ export const Header = () => {
 
   return (
     // <div className={STYLE.container}>
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar style={{ background: "#ABEDC6" }} position="fixed">
-        <Toolbar
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-          }}
-        >
-          {windowWidth > 480 ? (
-            <div className={STYLE.tabs}>
-              <Link to="/" className={STYLE.homeTab}>
-                <Button
-                  onClick={() => setCount(count + 1)}
-                  variant={
-                    window.location.pathname === "/"
-                      ? tabStyle.highligth.variant
-                      : tabStyle.default.variant
-                  }
-                  style={{
-                    fontWeight: "bold",
-                    borderColor:
-                      window.location.pathname === "/"
-                        ? `${tabStyle.highligth.color}`
-                        : `${tabStyle.default.color}`,
-                    color:
-                      window.location.pathname === "/"
-                        ? `${tabStyle.highligth.color}`
-                        : `${tabStyle.default.color}`,
-                  }}
-                >
-                  Home
-                </Button>
-              </Link>
-              <Link to="/Products" className={STYLE.productTab}>
-                <Button
-                  onClick={() => setCount(count + 1)}
-                  variant={
-                    window.location.pathname === "/Products"
-                      ? tabStyle.highligth.variant
-                      : tabStyle.default.variant
-                  }
-                  style={{
-                    fontWeight: "bold",
-                    borderColor:
-                      window.location.pathname === "/Products"
-                        ? `${tabStyle.highligth.color}`
-                        : `${tabStyle.default.color}`,
-                    color:
-                      window.location.pathname === "/Products"
-                        ? `${tabStyle.highligth.color}`
-                        : `${tabStyle.default.color}`,
-                  }}
-                >
-                  Products
-                </Button>
-              </Link>
-              <Link to="/Posts" className={STYLE.productTab}>
-                <Button
-                  onClick={() => setCount(count + 1)}
-                  variant={
-                    window.location.pathname === "/Posts"
-                      ? tabStyle.highligth.variant
-                      : tabStyle.default.variant
-                  }
-                  style={{
-                    fontWeight: "bold",
-                    borderColor:
-                      window.location.pathname === "/Posts"
-                        ? `${tabStyle.highligth.color}`
-                        : `${tabStyle.default.color}`,
-                    color:
-                      window.location.pathname === "/Posts"
-                        ? `${tabStyle.highligth.color}`
-                        : `${tabStyle.default.color}`,
-                  }}
-                >
-                  Posts
-                </Button>
-              </Link>
-            </div>
-          ) : (
-            <button
-              disabled={disable}
-              className={STYLE.menuBtn}
-              onClick={() => dispatch(toggleMenu())}
-              style={{ color: disable ? "#cccccc" : "black" }}
-            >
-              <MenuIcon style={{ color: "rgba(0, 0, 0, 0.54)" }} />
-            </button>
-          )}
 
-          <IconButton
-            onClick={() => dispatch(toggleCart())}
+    <AppBar style={{ background: "#ABEDC6" }} position="fixed">
+      <Toolbar
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+        }}
+      >
+        {windowWidth > 480 ? (
+          <div className={STYLE.tabs}>
+            <Link to="/" className={STYLE.homeTab}>
+              <Button
+                onClick={() => setCount(count + 1)}
+                variant={
+                  window.location.pathname === "/"
+                    ? tabStyle.highligth.variant
+                    : tabStyle.default.variant
+                }
+                style={{
+                  fontWeight: "bold",
+                  borderColor:
+                    window.location.pathname === "/"
+                      ? `${tabStyle.highligth.color}`
+                      : `${tabStyle.default.color}`,
+                  color:
+                    window.location.pathname === "/"
+                      ? `${tabStyle.highligth.color}`
+                      : `${tabStyle.default.color}`,
+                }}
+              >
+                Home
+              </Button>
+            </Link>
+            <Link to="/Products" className={STYLE.productTab}>
+              <Button
+                onClick={() => setCount(count + 1)}
+                variant={
+                  window.location.pathname === "/Products"
+                    ? tabStyle.highligth.variant
+                    : tabStyle.default.variant
+                }
+                style={{
+                  fontWeight: "bold",
+                  borderColor:
+                    window.location.pathname === "/Products"
+                      ? `${tabStyle.highligth.color}`
+                      : `${tabStyle.default.color}`,
+                  color:
+                    window.location.pathname === "/Products"
+                      ? `${tabStyle.highligth.color}`
+                      : `${tabStyle.default.color}`,
+                }}
+              >
+                Products
+              </Button>
+            </Link>
+            <Link to="/Posts" className={STYLE.productTab}>
+              <Button
+                onClick={() => setCount(count + 1)}
+                variant={
+                  window.location.pathname === "/Posts"
+                    ? tabStyle.highligth.variant
+                    : tabStyle.default.variant
+                }
+                style={{
+                  fontWeight: "bold",
+                  borderColor:
+                    window.location.pathname === "/Posts"
+                      ? `${tabStyle.highligth.color}`
+                      : `${tabStyle.default.color}`,
+                  color:
+                    window.location.pathname === "/Posts"
+                      ? `${tabStyle.highligth.color}`
+                      : `${tabStyle.default.color}`,
+                }}
+              >
+                Posts
+              </Button>
+            </Link>
+          </div>
+        ) : (
+          <button
             disabled={disable}
-            aria-label="cart"
+            className={STYLE.menuBtn}
+            onClick={() => dispatch(toggleMenu())}
+            style={{ color: disable ? "#cccccc" : "black" }}
           >
-            <StyledBadge badgeContent={itemsCounter} color="secondary">
-              <ShoppingCartIcon />
-            </StyledBadge>
-          </IconButton>
-          {(menu || toggle) && <div className={STYLE.shadyBackground} />}
-        </Toolbar>
-      </AppBar>
-    </Box>
+            <MenuIcon style={{ color: "rgba(0, 0, 0, 0.54)" }} />
+          </button>
+        )}
+
+        <IconButton
+          onClick={() => dispatch(toggleCart())}
+          disabled={disable}
+          aria-label="cart"
+        >
+          <StyledBadge badgeContent={itemsCounter} color="secondary">
+            <ShoppingCartIcon />
+          </StyledBadge>
+        </IconButton>
+        {/* {(menu || toggle) && <div className={STYLE.shadyBackground} />} */}
+      </Toolbar>
+    </AppBar>
     // </div>
   );
 };
