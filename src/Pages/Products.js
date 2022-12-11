@@ -54,6 +54,7 @@ export const Products = () => {
   return (
     <>
       <div className={STYLE.headTitle}>Products</div>
+
       <div className={STYLE.filter}>
         <FormControl sx={{ m: 0, minWidth: 100 }}>
           <InputLabel id="demo-simple-select-label">Sort by</InputLabel>

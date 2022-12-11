@@ -6,7 +6,6 @@ import { Header } from "./components/Header";
 import { Posts } from "./Pages/Posts";
 import { Home } from "./Pages/Home";
 import { Products } from "./Pages/Products";
-import { ShoppingCart } from "./components/ShoppingCart";
 import { MenuSlider } from "./components/MenuSlider";
 
 export default function App() {
@@ -16,7 +15,6 @@ export default function App() {
         style={{ fontFamily: "-apple-system, BlinkMacSystemFont, sans-serif" }}
       >
         <Header />
-        <ShoppingCart />
         <MenuSlider />
         <Routes>
           <Route path="/" element={<Home />} />
