@@ -72,7 +72,7 @@ export const MenuSlider = () => {
         >
           <Tab label="Home" onClick={() => navigate("/")} />
           <Tab label="Products" onClick={() => navigate("/Products")} />
-          <Tab label="Posts" onClick={() => navigate("/Posts")} />
+          {/* <Tab label="Posts" onClick={() => navigate("/Posts")} /> */}
         </Tabs>
       </Box>
     </SwipeableDrawer>
