@@ -1,5 +1,11 @@
 import React from "react";
-import STYLE from "./Item.module.css";
+import Card from "@mui/material/Card";
+import CardMedia from "@mui/material/CardMedia";
+import CardContent from "@mui/material/CardContent";
+import Typography from "@mui/material/Typography";
+import IconButton from "@mui/material/IconButton";
+import AddIcon from "@mui/icons-material/Add";
+import RemoveIcon from "@mui/icons-material/Remove";
 import { formatCurrency } from "../Hooks/formatCurrency";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -17,55 +23,110 @@ export const Item = ({ item }) => {
     )?.quantity || 0;
 
   return (
-    <div className={STYLE.container}>
-      <img className={STYLE.productImage} src={item.image} alt="img" />
-      <div className={STYLE.title}>{item.title}</div>
-      <div className={STYLE.price}>{formatCurrency(item.price)}</div>
-      {quantity <= 0 && (
-        <Button
-          style={{
-            marginTop: "1rem",
-            background: "#3AA7A3",
-            fontSize: "12px",
-            width: "80%",
+    <Card>
+      <CardContent
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
+        <CardMedia
+          sx={{
+            width: "100%",
+            height: "200px",
+            objectFit: "contain",
+            maxWidth: "100%",
           }}
-          variant="contained"
-          onClick={() => dispatch(incrementProductList(item))}
+          component="img"
+          image={item.image}
+          alt="img"
+        />
+        <Typography
+          style={{
+            height: "48px",
+            overflow: "hidden",
+            textOverflow: "ellipsis",
+            display: "-webkit-box",
+            textAlign: "center",
+            wordBreak: "break-word",
+            WebkitLineClamp: "2",
+            WebkitBoxOrient: "vertical",
+            marginTop: "10px",
+            fontWeight: "bold",
+          }}
+          component="div"
         >
-          Add to cart
-        </Button>
-      )}
-      {quantity > 0 && (
-        <div className={STYLE.changeQntContainer}>
+          {item.title}
+        </Typography>
+        <Typography style={{ marginTop: "10px" }} component="div">
+          {formatCurrency(item.price)}
+        </Typography>
+        {quantity <= 0 && (
           <Button
+            style={{
+              background: "#3AA7A3",
+              marginBottom: "25px",
+              marginTop: "25px",
+              width: "100%",
+            }}
             variant="contained"
-            style={{ background: "#7067CF", fontSize: "12px" }}
-            onClick={() => dispatch(decrementProductList(item))}
-            className={STYLE.changeQnt}
-          >
-            -
-          </Button>
-          <div className={STYLE.quantity}>{quantity}</div>
-          <Button
-            variant="contained"
-            style={{ background: "#7067CF", fontSize: "12px" }}
             onClick={() => dispatch(incrementProductList(item))}
-            className={STYLE.changeQnt}
           >
-            +
+            Add to cart
           </Button>
-        </div>
-      )}
-      {quantity > 0 && (
-        <Button
-          style={{ background: "#A4243B", fontSize: "12px", marginTop: "10px" }}
-          variant="contained"
-          onClick={() => dispatch(removeItem(item))}
-          className={STYLE.removeBtn}
-        >
-          remove
-        </Button>
-      )}
-    </div>
+        )}
+
+        {quantity > 0 && (
+          <Typography
+            sx={{
+              display: "flex",
+              justifyContent: "space-evenly",
+              alignItems: "center",
+              gap: "10px",
+              boxSizing: "border-box",
+              background: "#EFF5F5",
+              borderRadius: "5px",
+              width: "100%",
+              alignSelf: "center",
+            }}
+            component="div"
+          >
+            <IconButton
+              sx={{ color: "#6F38C5" }}
+              onClick={(e) => {
+                e.preventDefault();
+                return dispatch(decrementProductList(item));
+              }}
+            >
+              <RemoveIcon />
+            </IconButton>
+            <div style={{ color: "#0000008a" }}>{quantity}</div>
+            <IconButton
+              sx={{ color: "#6F38C5" }}
+              onClick={(e) => {
+                e.preventDefault();
+                return dispatch(incrementProductList(item));
+              }}
+            >
+              <AddIcon />
+            </IconButton>
+          </Typography>
+        )}
+        {quantity > 0 && (
+          <Button
+            style={{
+              background: "#A4243B",
+              width: "100%",
+              marginTop: "10px",
+            }}
+            variant="contained"
+            onClick={() => dispatch(removeItem(item))}
+          >
+            remove
+          </Button>
+        )}
+      </CardContent>
+    </Card>
   );
 };

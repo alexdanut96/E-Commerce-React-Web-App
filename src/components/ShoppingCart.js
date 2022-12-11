@@ -40,7 +40,7 @@ export const ShoppingCart = ({ windowWidth, windowHeight }) => {
   const handleClose = () => {
     setAnchorEl(null);
   };
-  console.log("cart");
+
   return (
     <div>
       <IconButton
@@ -130,7 +130,6 @@ export const ShoppingCart = ({ windowWidth, windowHeight }) => {
                     marginLeft: "5px",
                     display: "flex",
                     flexDirection: "column",
-                    // justifyContent: "space-between",
                     gap: "20px",
                     boxSizing: "border-box",
                   }}
@@ -177,7 +176,7 @@ export const ShoppingCart = ({ windowWidth, windowHeight }) => {
                     >
                       <RemoveIcon />
                     </IconButton>
-                    <div style={{ color: "#0000008a" }}>x{item.quantity}</div>
+                    <div style={{ color: "#0000008a" }}>{item.quantity}</div>
                     <IconButton
                       sx={{ color: "#6F38C5" }}
                       onClick={(e) => {

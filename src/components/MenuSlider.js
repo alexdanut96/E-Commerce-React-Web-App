@@ -1,7 +1,5 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-// import { useLocation } from "react-router-dom";
-// import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import {
   openMenu,
@@ -16,11 +14,9 @@ import Tab from "@mui/material/Tab";
 import SwipeableDrawer from "@mui/material/SwipeableDrawer";
 
 export const MenuSlider = () => {
-  // const location = useLocation();
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const menu = useSelector((state) => state.toggleCart.menuToggle);
-  console.log("menuSlide");
 
   return (
     <SwipeableDrawer

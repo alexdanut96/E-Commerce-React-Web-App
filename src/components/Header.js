@@ -17,7 +17,6 @@ export const Header = () => {
   const disable = useSelector((state) => state.toggleCart.buttonToggle);
   const [windowWidth, setWindowWidth] = React.useState(window.innerWidth);
   const [windowHeight, setWindowHeight] = React.useState(window.innerHeight);
-  const [count, setCount] = React.useState(0);
 
   React.useEffect(() => {
     const windowWidthSize = () => {
@@ -46,7 +45,6 @@ export const Header = () => {
           <div className={STYLE.tabs}>
             <Link to="/" className={STYLE.homeTab}>
               <Button
-                onClick={() => setCount(count + 1)}
                 variant={location.pathname === "/" ? "outlined" : "secondary"}
                 style={{
                   fontWeight: "bold",
@@ -60,7 +58,6 @@ export const Header = () => {
             </Link>
             <Link to="/Products" className={STYLE.productTab}>
               <Button
-                onClick={() => setCount(count + 1)}
                 variant={
                   location.pathname === "/Products" ? "outlined" : "secondary"
                 }
@@ -77,7 +74,6 @@ export const Header = () => {
             </Link>
             <Link to="/Posts" className={STYLE.productTab}>
               <Button
-                onClick={() => setCount(count + 1)}
                 variant={
                   location.pathname === "/Posts" ? "outlined" : "secondary"
                 }
