@@ -99,7 +99,11 @@ export const Header = () => {
             onClick={() => dispatch(toggleMenu())}
             style={{ color: disable ? "#cccccc" : "black" }}
           >
-            <MenuIcon style={{ color: "rgba(0, 0, 0, 0.54)" }} />
+            <MenuIcon
+              style={{
+                color: disable ? "rgba(0, 0, 0, 0.26)" : "rgba(0, 0, 0, 0.54)",
+              }}
+            />
           </IconButton>
         )}
         <ShoppingCart windowWidth={windowWidth} windowHeight={windowHeight} />
