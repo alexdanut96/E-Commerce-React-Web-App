@@ -8,6 +8,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Button from "@mui/material/Button";
+import IconButton from "@mui/material/IconButton";
 import { ShoppingCart } from "./ShoppingCart";
 
 export const Header = () => {
@@ -92,14 +93,14 @@ export const Header = () => {
             </Link>
           </div>
         ) : (
-          <button
+          <IconButton
             disabled={disable}
             className={STYLE.menuBtn}
             onClick={() => dispatch(toggleMenu())}
             style={{ color: disable ? "#cccccc" : "black" }}
           >
             <MenuIcon style={{ color: "rgba(0, 0, 0, 0.54)" }} />
-          </button>
+          </IconButton>
         )}
         <ShoppingCart windowWidth={windowWidth} windowHeight={windowHeight} />
       </Toolbar>
