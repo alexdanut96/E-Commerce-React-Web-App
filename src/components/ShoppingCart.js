@@ -62,7 +62,7 @@ export const ShoppingCart = ({ windowWidth, windowHeight }) => {
         id="long-menu"
         MenuListProps={{
           "aria-labelledby": "long-button",
-          disablePadding: "true",
+          disablePadding: true,
         }}
         anchorEl={anchorEl}
         open={open}
@@ -97,7 +97,7 @@ export const ShoppingCart = ({ windowWidth, windowHeight }) => {
 
         {cartItems.map((item) => (
           <MenuItem
-            disableTouchRipple="true"
+            disableTouchRipple={true}
             key={item.id}
             selected={item === "Pyxis"}
           >
@@ -170,7 +170,6 @@ export const ShoppingCart = ({ windowWidth, windowHeight }) => {
                   >
                     <IconButton
                       sx={{ color: "#6F38C5" }}
-                      disableTouchRipple="true"
                       onClick={(e) => {
                         e.preventDefault();
                         return dispatch(decrementProductList(item));
@@ -181,7 +180,6 @@ export const ShoppingCart = ({ windowWidth, windowHeight }) => {
                     <div style={{ color: "#0000008a" }}>x{item.quantity}</div>
                     <IconButton
                       sx={{ color: "#6F38C5" }}
-                      disableTouchRipple="true"
                       onClick={(e) => {
                         e.preventDefault();
                         return dispatch(incrementProductList(item));
@@ -216,7 +214,6 @@ export const ShoppingCart = ({ windowWidth, windowHeight }) => {
                   </div>
                   <Tooltip title="Delete">
                     <IconButton
-                      disableTouchRipple="true"
                       onClick={(e) => {
                         e.preventDefault();
                         return dispatch(removeItem(item));

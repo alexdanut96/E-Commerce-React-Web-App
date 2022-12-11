@@ -1,7 +1,7 @@
 import React from "react";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 // import { useLocation } from "react-router-dom";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import {
   openMenu,
@@ -17,7 +17,7 @@ import SwipeableDrawer from "@mui/material/SwipeableDrawer";
 
 export const MenuSlider = () => {
   // const location = useLocation();
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const menu = useSelector((state) => state.toggleCart.menuToggle);
   console.log("menuSlide");
@@ -74,15 +74,9 @@ export const MenuSlider = () => {
           onClick={() => dispatch(closeMenu())}
           aria-label="basic tabs example"
         >
-          <Link style={{ textDecoration: "none" }} to="/">
-            <Tab label="Home" />
-          </Link>
-          <Link style={{ textDecoration: "none" }} to="/Products">
-            <Tab label="Products" />
-          </Link>
-          <Link style={{ textDecoration: "none" }} to="/Posts">
-            <Tab label="Posts" />
-          </Link>
+          <Tab label="Home" onClick={() => navigate("/")} />
+          <Tab label="Products" onClick={() => navigate("/Products")} />
+          <Tab label="Posts" onClick={() => navigate("/Posts")} />
         </Tabs>
       </Box>
     </SwipeableDrawer>
