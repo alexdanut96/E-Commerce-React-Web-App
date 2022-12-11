@@ -22,9 +22,8 @@ import {
   removeItem,
 } from "../app/features/shoppingCart/ShoppingCartSlice";
 
-const ITEM_HEIGHT = 100;
-
-export const ShoppingCart = ({ windowWidth }) => {
+export const ShoppingCart = ({ windowWidth, windowHeight }) => {
+  const ITEM_HEIGHT = 0.2 * windowHeight;
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.shoppingCart.shoppingCart);
   const totalCartValue = cartItems.reduce(
@@ -41,10 +40,11 @@ export const ShoppingCart = ({ windowWidth }) => {
   const handleClose = () => {
     setAnchorEl(null);
   };
-
+  console.log("cart");
   return (
     <div>
       <IconButton
+        sx={{}}
         id="long-button"
         aria-controls={open ? "long-menu" : undefined}
         aria-expanded={open ? "true" : undefined}

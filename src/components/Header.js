@@ -15,15 +15,21 @@ export const Header = () => {
   const dispatch = useDispatch();
   const disable = useSelector((state) => state.toggleCart.buttonToggle);
   const [windowWidth, setWindowWidth] = React.useState(window.innerWidth);
+  const [windowHeight, setWindowHeight] = React.useState(window.innerHeight);
   const [count, setCount] = React.useState(0);
 
   React.useEffect(() => {
-    const windowSize = () => {
+    const windowWidthSize = () => {
       setWindowWidth(window.innerWidth);
     };
-    window.addEventListener("resize", windowSize);
+    const windowHeightSize = () => {
+      setWindowHeight(window.innerHeight);
+    };
+    window.addEventListener("resize", windowWidthSize);
+    window.addEventListener("resize", windowHeightSize);
     return function () {
-      window.removeEventListener("resize", windowSize);
+      window.removeEventListener("resize", windowWidthSize);
+      window.removeEventListener("resize", windowHeightSize);
     };
   }, []);
 
@@ -95,7 +101,7 @@ export const Header = () => {
             <MenuIcon style={{ color: "rgba(0, 0, 0, 0.54)" }} />
           </button>
         )}
-        <ShoppingCart windowWidth={windowWidth} />
+        <ShoppingCart windowWidth={windowWidth} windowHeight={windowHeight} />
       </Toolbar>
     </AppBar>
   );
