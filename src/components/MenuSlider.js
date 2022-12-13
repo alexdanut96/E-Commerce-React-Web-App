@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import {
   openMenu,
@@ -15,6 +15,7 @@ import SwipeableDrawer from "@mui/material/SwipeableDrawer";
 
 export const MenuSlider = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const dispatch = useDispatch();
   const menu = useSelector((state) => state.toggleCart.menuToggle);
 
@@ -61,9 +62,9 @@ export const MenuSlider = () => {
         <Tabs
           orientation="vertical"
           value={
-            window.location.pathname === "/"
+            location.pathname === "/"
               ? 0
-              : window.location.pathname === "/Products"
+              : location.pathname === "/Products"
               ? 1
               : 2
           }
