@@ -104,7 +104,7 @@ export const Header = () => {
           >
             <MenuIcon
               style={{
-                color: disable ? "rgba(0, 0, 0, 0.26)" : "#1976d2",
+                color: disable ? "#091d30" : "#1976d2",
               }}
             />
           </IconButton>
@@ -115,3 +115,4 @@ export const Header = () => {
   );
 };
 // rgba(0, 0, 0, 0.26)
+// rgba(0, 0, 0, 0.54)

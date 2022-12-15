@@ -21,6 +21,7 @@ import {
   incrementProductList,
   removeItem,
 } from "../app/features/shoppingCart/ShoppingCartSlice";
+import { Button } from "@mui/material";
 
 export const ShoppingCart = ({ windowWidth, windowHeight }) => {
   const ITEM_HEIGHT = 0.2 * windowHeight;
@@ -227,23 +228,31 @@ export const ShoppingCart = ({ windowWidth, windowHeight }) => {
           </MenuItem>
         ))}
         {totalCartValue ? (
-          <Typography
-            component="div"
-            style={{
-              position: "sticky",
-              bottom: "0",
-              zIndex: "1",
-              textAlign: "center",
-              background: "white",
-              boxShadow: " 0 -10px 20px -5px rgba(115,115,115,0.75)",
-              fontWeight: "bold",
-              borderTopLeftRadius: "50%",
-              borderTopRightRadius: "50%",
-              padding: "5px 0",
-            }}
-          >
-            Total:&nbsp;{formatCurrency(totalCartValue)}
-          </Typography>
+          <>
+            <Typography
+              component="div"
+              style={{
+                display: "block",
+                position: "sticky",
+                bottom: "0",
+                zIndex: "1",
+                textAlign: "center",
+                background: "white",
+                boxShadow: " 0 -10px 20px -5px rgba(115,115,115,0.75)",
+                fontWeight: "bold",
+                borderTopLeftRadius: "50%",
+                borderTopRightRadius: "50%",
+                padding: "5px 0",
+              }}
+            >
+              <Typography sx={{ fontWeight: "bold" }} component="div">
+                Total:&nbsp;{formatCurrency(totalCartValue)}
+              </Typography>
+              <Button sx={{ width: "80%" }} size="small" variant="outlined">
+                Checkout
+              </Button>
+            </Typography>
+          </>
         ) : (
           <Typography
             sx={{ textAlign: "center", padding: "10px 0" }}

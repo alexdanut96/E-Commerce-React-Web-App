@@ -30,7 +30,8 @@ export const MenuSlider = () => {
           width: "100%",
           height: "100vh",
           top: "0",
-          background: "linear-gradient(225deg, #e1edf9 0%, #d9eccf 100%)",
+          // background: "linear-gradient(225deg, #e1edf9 0%, #d9eccf 100%)",
+          background: "#0b121f",
         },
       }}
       open={menu}
