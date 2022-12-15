@@ -23,14 +23,14 @@ export const MenuSlider = () => {
     <SwipeableDrawer
       PaperProps={{
         sx: {
+          opacity: "0.95",
           boxSizing: "border-box",
           maxWidth: "300px",
           minWidth: "280px",
           width: "100%",
           height: "100vh",
           top: "0",
-          background:
-            "linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(238,255,224,1) 50%, rgba(224,255,219,1) 100%)",
+          background: "linear-gradient(225deg, #e1edf9 0%, #d9eccf 100%)",
         },
       }}
       open={menu}
@@ -38,10 +38,16 @@ export const MenuSlider = () => {
       onClose={() => dispatch(closeMenu())}
       onOpen={() => dispatch(openMenu())}
     >
-      <AppBar style={{ background: "#ABEDC6" }}>
-        <Toolbar sx={{ width: "100%", justifyContent: "center" }}>
+      <AppBar>
+        <Toolbar
+          sx={{
+            width: "100%",
+            justifyContent: "center",
+            borderBottom: "solid 1px #b0c9e2",
+          }}
+        >
           <Typography
-            sx={{ fontWeight: "bold", color: "#6F38C5" }}
+            sx={{ fontWeight: "bold", color: "#1976d2" }}
             component="div"
           >
             Menu

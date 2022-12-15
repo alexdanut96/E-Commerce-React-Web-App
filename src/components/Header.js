@@ -34,7 +34,14 @@ export const Header = () => {
   }, []);
 
   return (
-    <AppBar style={{ background: "#ABEDC6" }} position="fixed">
+    <AppBar
+      style={{
+        // background: "linear-gradient(225deg, #e1edf9 0%, #d9eccf 100%)",
+        background: "black",
+        opacity: "0.95",
+      }}
+      position="fixed"
+    >
       <Toolbar
         style={{
           display: "flex",
@@ -97,7 +104,7 @@ export const Header = () => {
           >
             <MenuIcon
               style={{
-                color: disable ? "rgba(0, 0, 0, 0.26)" : "rgba(0, 0, 0, 0.54)",
+                color: disable ? "rgba(0, 0, 0, 0.26)" : "#1976d2",
               }}
             />
           </IconButton>
@@ -107,3 +114,4 @@ export const Header = () => {
     </AppBar>
   );
 };
+// rgba(0, 0, 0, 0.26)

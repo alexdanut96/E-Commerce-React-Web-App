@@ -44,7 +44,7 @@ export const ShoppingCart = ({ windowWidth, windowHeight }) => {
   return (
     <div>
       <IconButton
-        sx={{}}
+        sx={{ color: "#1976d2" }}
         id="long-button"
         aria-controls={open ? "long-menu" : undefined}
         aria-expanded={open ? "true" : undefined}

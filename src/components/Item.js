@@ -23,7 +23,7 @@ export const Item = ({ item }) => {
     )?.quantity || 0;
 
   return (
-    <Card>
+    <Card sx={{ opacity: "0.9" }}>
       <CardContent
         style={{
           display: "flex",

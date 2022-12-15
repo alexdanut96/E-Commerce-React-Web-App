@@ -19,9 +19,14 @@ export const Posts = () => {
   ));
 
   return (
-    <>
+    <div
+      style={{
+        paddingRight: "1rem",
+        paddingLeft: "1rem",
+      }}
+    >
       <Form />
       <div className={STYLE.container}>{AllPosts}</div>
-    </>
+    </div>
   );
 };

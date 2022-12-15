@@ -27,7 +27,7 @@ export const Form = () => {
   return (
     <>
       <form onSubmit={(e) => e.preventDefault()} className={STYLE.form}>
-        <label className={STYLE.postNameLable} htmlFor="postTitle">
+        <label style={{ color: "white" }} htmlFor="postTitle">
           Post Title:
         </label>
         <input
@@ -37,7 +37,9 @@ export const Form = () => {
           value={title}
           onChange={(e) => setTitle(e.target.value)}
         />
-        <label htmlFor="postAuthor">Author:</label>
+        <label style={{ color: "white" }} htmlFor="postAuthor">
+          Author:
+        </label>
         <select
           className={STYLE.select}
           id="postAuthor"
@@ -47,7 +49,7 @@ export const Form = () => {
           <option value=""></option>
           {allOptions}
         </select>
-        <label className={STYLE.postContentLabel} htmlFor="postContent">
+        <label style={{ color: "white" }} htmlFor="postContent">
           Content
         </label>
         <input

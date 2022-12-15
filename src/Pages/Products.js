@@ -57,14 +57,30 @@ export const Products = () => {
 
       <div className={STYLE.filter}>
         <FormControl sx={{ m: 0, minWidth: 100 }}>
-          <InputLabel id="demo-simple-select-label">Sort by</InputLabel>
+          <InputLabel sx={{ color: "#a6e5e8" }} id="demo-simple-select-label">
+            Sort by
+          </InputLabel>
           <Select
             labelId="demo-simple-select-label"
             id="demo-simple-select"
             value={sortBy}
             label="Age"
             onChange={handleChange}
-            input={<OutlinedInput label="Sort by" />}
+            input={
+              <OutlinedInput
+                sx={{
+                  "& .MuiOutlinedInput-notchedOutline": {
+                    borderColor: "#a6e5e8",
+                  },
+                  "& .MuiSvgIcon-root": {
+                    color: "inherit",
+                  },
+
+                  color: "#a6e5e8",
+                }}
+                label="Sort by"
+              />
+            }
           >
             <MenuItem value="">
               <em>None</em>

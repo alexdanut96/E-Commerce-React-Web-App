@@ -1,4 +1,10 @@
 body {
   margin: 0;
   padding: 0;
+  /* background-image: url("https://wallpapercave.com/wp/wp3243621.jpg"); */
+  background-image: url("https://images3.alphacoders.com/606/thumb-1920-606500.jpg");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
