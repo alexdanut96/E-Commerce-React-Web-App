@@ -3,13 +3,13 @@ import { useLocation } from "react-router-dom";
 import STYLE from "./Header.module.css";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { toggleMenu } from "../app/features/shoppingCart/cartToggleSlice";
+import { toggleMenu } from "../../app/features/shoppingCart/cartToggleSlice";
 import MenuIcon from "@mui/icons-material/Menu";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
-import { ShoppingCart } from "./ShoppingCart";
+import { ShoppingCart } from "../shopping cart/ShoppingCart";
 
 export const Header = () => {
   const location = useLocation();

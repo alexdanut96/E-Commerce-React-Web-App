@@ -10,6 +10,7 @@ import { Provider } from "react-redux";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
+  // <Router>
   <HashRouter hashType="hashbang">
     {/* <React.StrictMode> */}
     <Provider store={store}>
@@ -17,6 +18,7 @@ root.render(
     </Provider>
     {/* </React.StrictMode> */}
   </HashRouter>
+  //  </Router>
 );
 
 // reportWebVitals();

@@ -1,10 +1,10 @@
 import React from "react";
 import STYLE from "./Posts.module.css";
 import { useSelector } from "react-redux";
-import { Form } from "../components/Form";
-import { PostAuthor } from "../app/features/posts/PostAuthor";
-import { allPosts } from "../app/features/posts/PostsSlice";
-import { TimeAgo } from "../app/features/posts/TimeAgo";
+import { Form } from "../../components/form/Form";
+import { PostAuthor } from "../../components/post author/PostAuthor";
+import { allPosts } from "../../app/features/posts/PostsSlice";
+import { TimeAgo } from "../../components/time ago/TimeAgo";
 
 export const Posts = () => {
   const posts = useSelector(allPosts);

@@ -1,8 +1,8 @@
 import React from "react";
-import STYLE from "../Pages/Posts.module.css";
+import STYLE from "../../Pages/posts/Posts.module.css";
 import { useDispatch, useSelector } from "react-redux";
-import { addPost } from "../app/features/posts/PostsSlice";
-import { selectAllUsers } from "../app/features/users/UsersSlice";
+import { addPost } from "../../app/features/posts/PostsSlice";
+import { selectAllUsers } from "../../app/features/users/UsersSlice";
 
 export const Form = () => {
   const dispatch = useDispatch();

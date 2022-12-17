@@ -5,7 +5,7 @@
   margin-top: 2rem;
   margin-bottom: 2rem;
   border-radius: 10px;
-  padding: 2rem;
+  /* padding: 2rem; */
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -18,12 +18,13 @@
   align-items: flex-start;
   /* box-shadow: 0px 0px 30px 0px rgba(186, 182, 182, 0.75); */
   box-shadow: 0px 0px 10px 6px #6f38c5;
-  width: 60%;
+  width: 80%;
   margin-left: auto;
   margin-right: auto;
   gap: 0.5rem;
   padding: 1rem;
   border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 .form {
@@ -35,15 +36,17 @@
   width: 100%;
   margin-left: auto;
   margin-right: auto;
-  padding: 2rem;
+  padding: 1rem;
   align-items: center;
   border-radius: 10px;
-  margin-top: 92px;
+  /* margin-top: 92px; */
   box-sizing: border-box;
+  background-color: rgba(0, 0, 0, 0.7);
+  /* background-color: rgb(255, 255, 255, 0.7); */
 }
 
 .form > * {
-  width: 60%;
+  width: 90%;
 }
 
 .input {
@@ -59,11 +62,11 @@
   border-radius: 10px;
   border: none;
   box-shadow: 0px 0px 30px 0px rgba(186, 182, 182, 0.75);
-  height: 2rem;
+  height: 52px;
 }
 
 .formBtn {
-  height: 2rem;
+  height: 50px;
   border-radius: 10px;
   border: none;
   box-shadow: 0px 0px 30px 0px rgba(186, 182, 182, 0.75);

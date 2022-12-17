@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import {
   openMenu,
   closeMenu,
-} from "../app/features/shoppingCart/cartToggleSlice";
+} from "../../app/features/shoppingCart/cartToggleSlice";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Toolbar from "@mui/material/Toolbar";
@@ -44,7 +44,7 @@ export const MenuSlider = () => {
           sx={{
             width: "100%",
             justifyContent: "center",
-            borderBottom: "solid 1px #b0c9e2",
+            borderBottom: "solid 1px #1976d2",
           }}
         >
           <Typography
@@ -78,9 +78,21 @@ export const MenuSlider = () => {
           onClick={() => dispatch(closeMenu())}
           aria-label="basic tabs example"
         >
-          <Tab label="Home" onClick={() => navigate("/")} />
-          <Tab label="Products" onClick={() => navigate("/Products")} />
-          <Tab label="Posts" onClick={() => navigate("/Posts")} />
+          <Tab
+            sx={{ color: "#0f4375" }}
+            label="Home"
+            onClick={() => navigate("/")}
+          />
+          <Tab
+            sx={{ color: "#0f4375" }}
+            label="Products"
+            onClick={() => navigate("/Products")}
+          />
+          <Tab
+            sx={{ color: "#0f4375" }}
+            label="Posts"
+            onClick={() => navigate("/Posts")}
+          />
         </Tabs>
       </Box>
     </SwipeableDrawer>
