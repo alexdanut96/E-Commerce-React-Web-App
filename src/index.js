@@ -7,6 +7,7 @@ import App from "./App";
 import { HashRouter } from "react-router-dom";
 import { store } from "./app/store";
 import { Provider } from "react-redux";
+import ScrollToTop from "./Hooks/ScrollToTop";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -14,6 +15,7 @@ root.render(
   <HashRouter hashType="hashbang">
     {/* <React.StrictMode> */}
     <Provider store={store}>
+      <ScrollToTop />
       <App />
     </Provider>
     {/* </React.StrictMode> */}

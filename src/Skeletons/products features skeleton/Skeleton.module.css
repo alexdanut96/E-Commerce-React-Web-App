@@ -49,3 +49,7 @@
   animation: skeleton-loading 1s linear infinite alternate;
   margin-top: 10px;
 }
+
+.animation {
+  animation: skeleton-loading 1s linear infinite alternate;
+}

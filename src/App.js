@@ -7,16 +7,19 @@ import { HomePage } from "./Pages/home page/HomePage";
 import { Products } from "./Pages/products/Products";
 import { MenuSlider } from "./components/menu slider/MenuSlider";
 import { SingleProduct } from "./components/shared/SingleProduct";
+import { Skeleton } from "./Skeletons/single product skeleton/Skeleton";
 
 export default function App() {
   return (
     <>
       <Header />
       <MenuSlider />
+
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/Products" element={<Products />} />
         <Route path="/Posts" element={<Posts />} />
+        <Route path="/Skeleton" element={<Skeleton />} />
         <Route
           path="/Products/:productTitle/cpd/:id"
           element={<SingleProduct />}

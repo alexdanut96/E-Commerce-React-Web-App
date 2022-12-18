@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import STYLE from "./Products.module.css";
 import axios from "axios";
 import { Item } from "../../components/item/Item";
-import { SkeletonElement } from "../../Skeletons/SkeletonElement";
+import { SkeletonElement } from "../../Skeletons/products features skeleton/SkeletonElement";
 import { storeData } from "../../app/features/fetched data/FetchedDataSlice";
 import { nanoid } from "@reduxjs/toolkit";
 import {

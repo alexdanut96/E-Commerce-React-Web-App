@@ -4,7 +4,7 @@ export const Footer = () => {
   return (
     <div
       style={{
-        marginTop: "2rem",
+        // marginTop: "2rem",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
