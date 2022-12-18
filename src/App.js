@@ -14,7 +14,6 @@ export default function App() {
     <>
       <Header />
       <MenuSlider />
-
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/Products" element={<Products />} />
