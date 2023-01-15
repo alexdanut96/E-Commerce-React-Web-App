@@ -73,7 +73,9 @@ export const MenuSlider = () => {
               ? 0
               : location.pathname === "/Products"
               ? 1
-              : 2
+              : location.pathname === "/Posts"
+              ? 2
+              : 3
           }
           onClick={() => dispatch(closeMenu())}
           aria-label="basic tabs example"
@@ -92,6 +94,11 @@ export const MenuSlider = () => {
             sx={{ color: "#0f4375" }}
             label="Posts"
             onClick={() => navigate("/Posts")}
+          />
+          <Tab
+            sx={{ color: "#0f4375" }}
+            label="Privacy Policy"
+            onClick={() => navigate("/privacy-policy")}
           />
         </Tabs>
       </Box>

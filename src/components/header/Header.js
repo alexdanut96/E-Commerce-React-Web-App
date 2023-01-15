@@ -10,6 +10,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import { ShoppingCart } from "../shopping cart/ShoppingCart";
+import { FacebookAuth } from "../facebook authentication/facebookAuth";
 
 export const Header = () => {
   const location = useLocation();
@@ -94,6 +95,28 @@ export const Header = () => {
                 Posts
               </Button>
             </Link>
+            <Link to="/privacy-policy" className={STYLE.productTab}>
+              <Button
+                variant={
+                  location.pathname === "/privacy-policy"
+                    ? "outlined"
+                    : "secondary"
+                }
+                style={{
+                  fontWeight: "bold",
+                  borderColor:
+                    location.pathname === "/privacy-policy"
+                      ? "#FF9B42"
+                      : "#00A7E1",
+                  color:
+                    location.pathname === "/privacy-policy"
+                      ? "#FF9B42"
+                      : "#00A7E1",
+                }}
+              >
+                Privacy Policy
+              </Button>
+            </Link>
           </div>
         ) : (
           <IconButton
@@ -109,6 +132,7 @@ export const Header = () => {
             />
           </IconButton>
         )}
+        {/* <FacebookAuth /> */}
         <ShoppingCart windowWidth={windowWidth} windowHeight={windowHeight} />
       </Toolbar>
     </AppBar>
