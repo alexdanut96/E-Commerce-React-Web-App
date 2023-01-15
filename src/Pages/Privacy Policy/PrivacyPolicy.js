@@ -3,7 +3,7 @@ import React from "react";
 export const PrivacyPolicy = () => {
   return (
     <div style={{ color: "white" }}>
-      <h2>Privacy Policy</h2>
+      <h2>Privacy Policy!!!</h2>
       <div>
         This Privacy Policy is prepared by LOCAL HOST and whose registered
         address is DRUMUL JILAVEI 70 (“We”) are committed to protecting and
